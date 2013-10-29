@@ -1,74 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.128" errors="0" skipped="0" tests="6" name="com.dummiesmind.json.JSONProducerTest">
+<testsuite name="com.dummiesmind.json.JSONProducerTest" skipped="0" tests="4" errors="0" time="0.328" failures="0">
   <properties>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
-    <property name="java.vm.version" value="20.14-b01-445"/>
-    <property name="awt.nativeDoubleBuffering" value="true"/>
-    <property name="gopherProxySet" value="false"/>
-    <property name="mrj.build" value="11M4107"/>
-    <property name="java.vm.vendor" value="Apple Inc."/>
-    <property name="java.vendor.url" value="http://www.apple.com/"/>
-    <property name="path.separator" value=":"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="user.country" value="US"/>
-    <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value="unknown"/>
-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/dummiesmind/Development/workspace/json.mapper"/>
-    <property name="java.runtime.version" value="1.6.0_41-b02-445-11M4107"/>
-    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment"/>
-    <property name="basedir" value="/Users/dummiesmind/Development/workspace/json.mapper"/>
-    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
-    <property name="os.arch" value="x86_64"/>
-    <property name="surefire.real.class.path" value="/Users/dummiesmind/Development/workspace/json.mapper/target/surefire/surefirebooter1560239325619638811.jar"/>
-    <property name="java.io.tmpdir" value="/var/folders/02/9_052wc55mn57q61_06_nvc40000gn/T/"/>
-    <property name="line.separator" value="
-"/>
-    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
-    <property name="os.name" value="Mac OS X"/>
-    <property name="sun.jnu.encoding" value="MacRoman"/>
-    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
-    <property name="surefire.test.class.path" value="/Users/dummiesmind/Development/workspace/json.mapper/target/test-classes:/Users/dummiesmind/Development/workspace/json.mapper/target/classes:/Users/dummiesmind/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/dummiesmind/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/dummiesmind/.m2/repository/ognl/ognl/3.0.6/ognl-3.0.6.jar:/Users/dummiesmind/.m2/repository/javassist/javassist/3.11.0.GA/javassist-3.11.0.GA.jar:/Users/dummiesmind/.m2/repository/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar:/Users/dummiesmind/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/dummiesmind/.m2/repository/org/json/json/20090211/json-20090211.jar:"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="java.class.version" value="50.0"/>
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.8.2"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="user.home" value="/Users/dummiesmind"/>
-    <property name="user.timezone" value=""/>
-    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob"/>
-    <property name="java.specification.version" value="1.6"/>
-    <property name="file.encoding" value="MacRoman"/>
-    <property name="user.name" value="dummiesmind"/>
-    <property name="java.class.path" value="/Users/dummiesmind/Development/workspace/json.mapper/target/test-classes:/Users/dummiesmind/Development/workspace/json.mapper/target/classes:/Users/dummiesmind/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/dummiesmind/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/dummiesmind/.m2/repository/ognl/ognl/3.0.6/ognl-3.0.6.jar:/Users/dummiesmind/.m2/repository/javassist/javassist/3.11.0.GA/javassist-3.11.0.GA.jar:/Users/dummiesmind/.m2/repository/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar:/Users/dummiesmind/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/dummiesmind/.m2/repository/org/json/json/20090211/json-20090211.jar:"/>
-    <property name="java.vm.specification.version" value="1.0"/>
-    <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
-    <property name="sun.java.command" value="/Users/dummiesmind/Development/workspace/json.mapper/target/surefire/surefirebooter1560239325619638811.jar /Users/dummiesmind/Development/workspace/json.mapper/target/surefire/surefire1640550492197929572tmp /Users/dummiesmind/Development/workspace/json.mapper/target/surefire/surefire1032832207826310901tmp"/>
-    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
-    <property name="user.language" value="en"/>
-    <property name="awt.toolkit" value="apple.awt.CToolkit"/>
-    <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.6.0_41"/>
-    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext"/>
-    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar"/>
-    <property name="java.vendor" value="Apple Inc."/>
-    <property name="localRepository" value="/Users/dummiesmind/.m2/repository"/>
-    <property name="file.separator" value="/"/>
-    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/"/>
-    <property name="sun.cpu.endian" value="little"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="mrj.version" value="1070.1.6.0_41-445"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="sun.cpu.isalist" value=""/>
+    <property value="ON" name="java.assistive"/>
+    <property value="Java(TM) 2 Runtime Environment, Standard Edition" name="java.runtime.name"/>
+    <property value="false" name="ibm.signalhandling.rs"/>
+    <property value="C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\bin" name="sun.boot.library.path"/>
+    <property value="2.3" name="java.vm.version"/>
+    <property value="scar" name="com.ibm.oti.configuration"/>
+    <property value="IBM Corporation" name="java.vm.vendor"/>
+    <property value="http://www.ibm.com/" name="java.vendor.url"/>
+    <property value=";" name="path.separator"/>
+    <property value="IBM J9 VM" name="java.vm.name"/>
+    <property value="US" name="user.country"/>
+    <property value="Cp437" name="console.encoding"/>
+    <property value="Java Virtual Machine Specification" name="java.vm.specification.name"/>
+    <property value="C:\Pawan&apos;sDev\_mygithub\JavaObjectToJSON" name="user.dir"/>
+    <property value="pwi32devifx-20120208a (SR13 +IV14926)" name="java.runtime.version"/>
+    <property value="J2RE 1.5.0 IBM J9 2.3 Windows XP x86-32 j9vmwi3223-20111020 (JIT enabled)
+J9VM - 20111017_92807_lHdSMr
+JIT  - 20110916_20782_r8
+GC   - 20110524_AA" name="java.fullversion"/>
+    <property value="sun.awt.Win32GraphicsEnvironment" name="java.awt.graphicsenv"/>
+    <property value="C:\Pawan&apos;sDev\_mygithub\JavaObjectToJSON" name="basedir"/>
+    <property value="x86" name="os.arch"/>
+    <property value="32" name="com.ibm.vm.bitmode"/>
+    <property value="C:\DOCUME~1\choprp1\LOCALS~1\Temp\surefirebooter3126115077014584358.jar" name="surefire.real.class.path"/>
+    <property value="C:\DOCUME~1\choprp1\LOCALS~1\Temp\" name="java.io.tmpdir"/>
+    <property value="" name="com.ibm.util.extralibs.properties"/>
+    <property value="
+" name="line.separator"/>
+    <property value="Sun Microsystems Inc." name="java.vm.specification.vendor"/>
+    <property value="" name="user.variant"/>
+    <property value="" name="java.awt.fonts"/>
+    <property value="Windows XP" name="os.name"/>
+    <property value="" name="sun.java2d.fontpath"/>
+    <property value="20111019" name="java.jcl.version"/>
+    <property value="Cp1252" name="sun.jnu.encoding"/>
+    <property value="C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\bin;C:\WINXP\system32;C:\WINXP;C:\RailsInstaller\Git\cmd;C:\RailsInstaller\Ruby1.8.7\bin;C:\Perl\site\bin;C:\Perl\bin;C:\ora\9iClient\bin;C:\WINXP\system32;C:\WINXP;C:\WINXP\System32\Wbem;C:\WINXP\system32\WindowsPowerShell\v1.0;C:\Program Files\Lotus\Notes;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Ulead Systems\MPEG;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\PROGRA~1\IBM\SQLLIB\SAMPLES\REPL;C:\Program Files\Windows Imaging\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files\nodejs\;C:\Program Files\QuickTime\QTSystem\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\bin;.;C:\apache-maven-2.2.1-bin\bin;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\bin;C:\Program Files\Java\jre1.6.0_06\bin;C:\Documents and Settings\choprp1\Application Data\npm;C:\Pawan&apos;sDev\MongoDb\bin;C:\Program Files\KDiff3\bin;C:\Pawan&apos;sDev\sonar-runner-2.2\bin;C:\Program Files\Git\cmd;C:\Program Files\Sublime Text 2;C:\Ruby193\bin;C:\Python33;C:\Program Files\GnuWin32\bin;." name="java.library.path"/>
+    <property value="9" name="jxe.current.romimage.version"/>
+    <property value="C:\Pawan&apos;sDev\_mygithub\JavaObjectToJSON\target\test-classes;C:\Pawan&apos;sDev\_mygithub\JavaObjectToJSON\target\classes;c:\OPOEM2\repository\junit\junit\4.11\junit-4.11.jar;c:\OPOEM2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;c:\OPOEM2\repository\ognl\ognl\3.0.6\ognl-3.0.6.jar;c:\OPOEM2\repository\javassist\javassist\3.11.0.GA\javassist-3.11.0.GA.jar;c:\OPOEM2\repository\org\mockito\mockito-all\1.9.5\mockito-all-1.9.5.jar;c:\OPOEM2\repository\org\hamcrest\hamcrest-all\1.3\hamcrest-all-1.3.jar;c:\OPOEM2\repository\org\json\json\20080701\json-20080701.jar;" name="surefire.test.class.path"/>
+    <property value="C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\bin" name="com.ibm.oti.vm.bootstrap.library.path"/>
+    <property value="49.0" name="java.class.version"/>
+    <property value="Java Platform API Specification" name="java.specification.name"/>
+    <property value="little" name="com.ibm.cpu.endian"/>
+    <property value="Cp1252" name="ibm.system.encoding"/>
+    <property value="" name="invokedviajava"/>
+    <property value="java.util.prefs.WindowsPreferencesFactory" name="java.util.prefs.PreferencesFactory"/>
+    <property value="5.1 build 2600 Service Pack 3" name="os.version"/>
+    <property value="23" name="com.ibm.oti.vm.library.version"/>
+    <property value="C:\Documents and Settings\choprp1" name="user.home"/>
+    <property value="" name="user.timezone"/>
+    <property value="sun.awt.windows.WPrinterJob" name="java.awt.printerjob"/>
+    <property value="1.5" name="java.specification.version"/>
+    <property value="Cp1252" name="file.encoding"/>
+    <property value="C:\Pawan&apos;sDev\_mygithub\JavaObjectToJSON\target\test-classes;C:\Pawan&apos;sDev\_mygithub\JavaObjectToJSON\target\classes;c:\OPOEM2\repository\junit\junit\4.11\junit-4.11.jar;c:\OPOEM2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;c:\OPOEM2\repository\ognl\ognl\3.0.6\ognl-3.0.6.jar;c:\OPOEM2\repository\javassist\javassist\3.11.0.GA\javassist-3.11.0.GA.jar;c:\OPOEM2\repository\org\mockito\mockito-all\1.9.5\mockito-all-1.9.5.jar;c:\OPOEM2\repository\org\hamcrest\hamcrest-all\1.3\hamcrest-all-1.3.jar;c:\OPOEM2\repository\org\json\json\20080701\json-20080701.jar;" name="java.class.path"/>
+    <property value="choprp1" name="user.name"/>
+    <property value="1.0" name="java.vm.specification.version"/>
+    <property value="C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre" name="java.home"/>
+    <property value="32" name="sun.arch.data.model"/>
+    <property value="Sun Microsystems Inc." name="java.specification.vendor"/>
+    <property value="true" name="ibm.signalhandling.sigint"/>
+    <property value="en" name="user.language"/>
+    <property value="20110714_1214" name="com.ibm.oti.jcl.build"/>
+    <property value="UTF8" name="os.encoding"/>
+    <property value="sun.awt.windows.WToolkit" name="awt.toolkit"/>
+    <property value="J2RE 1.5.0 IBM J9 2.3 Windows XP x86-32 j9vmwi3223-20111020 (JIT enabled)
+J9VM - 20111017_92807_lHdSMr
+JIT  - 20110916_20782_r8
+GC   - 20110524_AA" name="java.vm.info"/>
+    <property value="1.5.0" name="java.version"/>
+    <property value="C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\ext" name="java.ext.dirs"/>
+    <property value="C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\vm.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\core.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\charsets.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\graphics.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\security.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\ibmpkcs.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\ibmorb.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\ibmcfw.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\ibmorbapi.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\ibmjcefw.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\ibmjgssprovider.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\ibmjsseprovider2.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\ibmjaaslm.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\ibmjaasactivelm.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\ibmcertpathprovider.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\server.jar;C:\Program Files\IBM\SDP_1\runtimes\base_v61\java\jre\lib\xml.jar" name="sun.boot.class.path"/>
+    <property value="9" name="jxe.lowest.romimage.version"/>
+    <property value="IBM Corporation" name="java.vendor"/>
+    <property value="c:/OPOEM2/repository" name="localRepository"/>
+    <property value="\" name="file.separator"/>
+    <property value="j9jit23" name="java.compiler"/>
+    <property value="little" name="sun.cpu.endian"/>
+    <property value="UnicodeLittle" name="sun.io.unicode.encoding"/>
+    <property value="true" name="ibm.signalhandling.sigchain"/>
   </properties>
-  <testcase time="0.071" classname="com.dummiesmind.json.JSONProducerTest" name="createsJSONObjectForProperty_GivenNote_ReturnsJSONObject_WithDeepRelation"/>
-  <testcase time="0.002" classname="com.dummiesmind.json.JSONProducerTest" name="createsJSONObjectForProperty_ReturnsJSONObject"/>
-  <testcase time="0.004" classname="com.dummiesmind.json.JSONProducerTest" name="createsJSONArrayReturns_MultiplePropertiesForOneObjectInJSONArray"/>
-  <testcase time="0" classname="com.dummiesmind.json.JSONProducerTest" name="createsJSONObjectForProperty_GivenNote_ReturnsJSONObject_WithPropertyNameAsKeyAndPropertyValueAsValue"/>
-  <testcase time="0" classname="com.dummiesmind.json.JSONProducerTest" name="createsJSONObjectForProperty_GivenTask_ReturnsJSONObject_WithPropertyNameAsKeyAndPropertyValueAsValue"/>
-  <testcase time="0.001" classname="com.dummiesmind.json.JSONProducerTest" name="createsListOfJSONArrayReturns_MultipleValuesMappedInArray_ForMultipleObjects"/>
+  <testcase classname="com.dummiesmind.json.JSONProducerTest" name="createsJSONObjectForProperty_ReturnsJSONObject" time="0.234"/>
+  <testcase classname="com.dummiesmind.json.JSONProducerTest" name="createsJSONObjectForProperty_GivenTask_ReturnsJSONObject_WithPropertyNameAsKeyAndPropertyValueAsValue" time="0"/>
+  <testcase classname="com.dummiesmind.json.JSONProducerTest" name="createsListOfJSONArrayReturns_MultipleValuesMappedInArray_ForMultipleObjects" time="0.063"/>
+  <testcase classname="com.dummiesmind.json.JSONProducerTest" name="createsJSONObjectForProperty_GivenNote_ReturnsJSONObject_WithDeepRelation_usingOGNL" time="0"/>
 </testsuite>

@@ -9,7 +9,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,18 +31,19 @@ public class JSONProducerTest {
 
 	@Test
 	public void createsJSONObjectForProperty_ReturnsJSONObject() throws Exception {
-		JSONObject results = jsonProducer.createJSONObjectForProperty("description", new Task(null,
+		JSONObject results = jsonProducer.createJSONObjectForProperty(asList("description"), new Task(null,
 				null, null));
 
 		assertThat(results, instanceOf(JSONObject.class));
 	}
+
 
 	@Test
 	public void createsJSONObjectForProperty_GivenTask_ReturnsJSONObject_WithPropertyNameAsKeyAndPropertyValueAsValue()
 			throws Exception {
 		Task task = new Task(null, null, "My first task");
 
-		JSONObject results = jsonProducer.createJSONObjectForProperty("description", task);
+		JSONObject results = jsonProducer.createJSONObjectForProperty(asList("description"), task);
 
 		assertThat(results.getString("description"), is("My first task"));
 	}
@@ -48,54 +51,52 @@ public class JSONProducerTest {
 
 
 	@Test
-	public void createsJSONObjectForProperty_GivenNote_ReturnsJSONObject_WithPropertyNameAsKeyAndPropertyValueAsValue()
+	public void createsJSONObjectForProperty_GivenNote_ReturnsJSONObject_WithDeepRelation_usingOGNL	()
 			throws Exception {
-		Note note = new Note("My first note", null);
+		Note note = new Note("My first note", new Owner("Pawan", "pawan@gmail.com"));
 
-		JSONObject results = jsonProducer.createJSONObjectForProperty("text", note);
-
-		assertThat(results.getString("text"), is("My first note"));
-	}
-
-	@Test
-	public void createsJSONObjectForProperty_GivenNote_ReturnsJSONObject_WithDeepRelation()
-			throws Exception {
-		Note note = new Note("My first note", new Owner("Pawan", "pawanspace@gmail.com"));
-
-		JSONObject results = jsonProducer.createJSONObjectForProperty("writer.name", note);
+		JSONObject results = jsonProducer.createJSONObjectForProperty(asList("writer.name"), note);
 
 		assertThat(results.getString("writer.name"), is("Pawan"));
 	}
 
 	
+	
 	@Test
+	@SuppressWarnings("unchecked")
 	public void createsListOfJSONArrayReturns_MultipleValuesMappedInArray_ForMultipleObjects() throws Exception {
 		Map<Task, List<String>> testData = createMapForTasksTestData();
 		
-		List<JSONArray> results = jsonProducer.createJSONArrayListForMultipleObjectsProperties(testData);
+		JSONArray results = jsonProducer.createJSONArrayForMultipleObjects(testData);
 	
-		assertThat(results.size(), is(3));
-	}
-	
-	@Test
-	public void createsJSONArrayReturns_MultiplePropertiesForOneObjectInJSONArray() throws Exception {
-		Owner writer = new Owner("Pawan", "pawanspace@gmail.com");
-		Note note = new Note("My first note", writer);
-		Task task = new Task(writer, asList(note), "Task 1");
-
-		JSONArray array = jsonProducer.createJSONArrayForProperties(asList("description", "notes", "assignee.name", "assignee.email"), task);
+		assertThat(results.length(), is(3));
+		JSONObject jsonObject = getTask2(results);
 		
-		assertThat(array.getJSONObject(0).getString("description"), is("Task 1"));
-		assertThat(array.getJSONObject(1).get("notes"), instanceOf(List.class));
-		assertThat(array.getJSONObject(2).getString("assignee.name"), is("Pawan"));
-		assertThat(array.getJSONObject(3).getString("assignee.email"), is("pawanspace@gmail.com"));
+		assertThat(jsonObject.getString("description"), is("Task 2"));
+		assertThat(jsonObject.get("notes"), instanceOf(List.class));
+		assertThat(((List<Note>)jsonObject.get("notes")).get(0).getText(), is("My first note"));
+		assertThat(jsonObject.getString("assignee.name"), is("Varun"));
+		assertThat(jsonObject.getString("assignee.email"), is("varun@gmail.com"));
+
+	}
+
+	private JSONObject getTask2(JSONArray results) throws JSONException {
+		JSONObject jsonObject = null;
+			
+		for (int i = 0; i < results.length(); i++) {
+			JSONObject obj = (JSONObject)results.get(i);
+			if(obj.getString("description").equals("Task 2")){
+				jsonObject = obj;
+			}
+		}
+		return jsonObject;
 	}
 	
 	
 	private Map<Task, List<String>> createMapForTasksTestData(){
 		Map<Task, List<String>> testData = new HashMap<Task, List<String>>();
-		Owner writer1 = new Owner("Pawan", "pawanspace@gmail.com");
-		Owner writer2 = new Owner("Varun", "varunspace@gmail.com");
+		Owner writer1 = new Owner("Pawan", "pawan@gmail.com");
+		Owner writer2 = new Owner("Varun", "varun@gmail.com");
 		
 		Note note1 = new Note("My first note", writer1);
 		Note note2 = new Note("My second note", writer2);
@@ -105,7 +106,7 @@ public class JSONProducerTest {
 		Task task3 = new Task(writer1, null, "Task 3");
 		
 		testData.put(task1, asList("description", "notes"));
-		testData.put(task2, asList("description", "notes", "assignee.name"));
+		testData.put(task2, asList("description", "notes", "assignee.name", "assignee.email"));
 		testData.put(task3, asList("description", "assignee.name"));
 		
 		
